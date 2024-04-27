@@ -124,6 +124,7 @@ export default function Home() {
               href={`/word/${item.word}`}
               className={styles.card}
               rel="noopener noreferrer"
+              key={item.word}
             >
               <h2>
                 {item.word} <span>-&gt;</span>
