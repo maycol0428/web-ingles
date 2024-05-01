@@ -1,6 +1,6 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import Link from "next/link";
+import { Grid } from "@/components/grids/Grid";
+import { PrepositionCard } from "./components/PrepositionCard";
 
 const prepositions = [
   { word: "about", spanish: "acerca de", phonetic: "əˈbaʊt" },
@@ -117,24 +117,13 @@ export default function Home() {
 
       <br />
 
-      <div className={styles.grid}>
+      <Grid>
         {
-          prepositions.map(item => {
-            return <Link
-              href={`/word/${item.word}`}
-              className={styles.card}
-              rel="noopener noreferrer"
-              key={item.word}
-            >
-              <h2>
-                {item.word} <span>-&gt;</span>
-              </h2>
-              <p>{item.phonetic}</p>
-              <p>{item.spanish}</p>
-            </Link>
-          })
+          prepositions.map(({ word, spanish, phonetic }, i) =>
+            <PrepositionCard key={i} spanish={spanish} word={word} phonetic={phonetic} />
+          )
         }
-      </div>
+      </Grid>
     </main>
   );
 }
