@@ -14,8 +14,9 @@ export default function Page({ params }: { params: { id: string } }) {
   const { phonetic, spanish, word } = preposition;
 
   return (
-    <main className="p-5 max-w-md m-auto">
+    <main className="p-5">
       <div
+        className="max-w-md m-auto"
         style={{
           viewTransitionName: `preposition__${word}`,
         }}
