@@ -15,11 +15,27 @@ export const PrepositionCard = ({ word, phonetic, spanish }: Props) => {
       href={`/preposition/${word}`}
       rel="noopener noreferrer"
     >
-      <h2>
+      <h2
+        style={{
+          viewTransitionName: `preposition__word__${word}`,
+        }}
+      >
         {word} <span>-&gt;</span>
       </h2>
-      <p>{phonetic}</p>
-      <p>{spanish}</p>
+      <p
+        style={{
+          viewTransitionName: `preposition__phonetic__${word}`,
+        }}
+      >
+        {phonetic}
+      </p>
+      <p
+        style={{
+          viewTransitionName: `preposition__spanish__${word}`,
+        }}
+      >
+        {spanish}
+      </p>
     </Link>
   );
 };

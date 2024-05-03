@@ -1,0 +1,22 @@
+.PrepositionDetailCard {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+.PrepositionDetailCard {
+  @apply shadow-lg bg-navyBlue/60;
+}
+
+.PrepositionDetailCard h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.PrepositionDetailCard p {
+  @apply text-default-500;
+}

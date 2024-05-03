@@ -3,7 +3,7 @@ import BackIcon from "@/components/icons/BackIcon";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { Link } from "next-view-transitions";
-import { Button } from "@nextui-org/react";
+import { Button, LinkIcon } from "@nextui-org/react";
 import styles from "./Header.module.css";
 
 export const Header = () => {
@@ -14,14 +14,16 @@ export const Header = () => {
 
   return (
     <header className={styles.header} style={{ viewTransitionName: "header" }}>
-      <nav className="flex gap-2">
+      <nav className="flex gap-2 align-middle">
         {showButtonBack && (
-          <div>
-            <Link href={"/"}>
-              <button className="cursor-pointer">
-                <BackIcon></BackIcon>
-              </button>
-            </Link>
+          <div className="grid place-items-center">
+            <Button
+              as={Link}
+              href="/"
+              className="grid place-items-center bg-midnightBlue"
+            >
+              <BackIcon></BackIcon>
+            </Button>
           </div>
         )}
         <div
@@ -30,9 +32,6 @@ export const Header = () => {
         >
           Maycol EM
         </div>
-        <Button variant="solid" color="success">
-          next UI
-        </Button>
       </nav>
     </header>
   );

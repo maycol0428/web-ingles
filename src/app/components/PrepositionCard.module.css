@@ -1,8 +1,9 @@
 .card {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   @apply shadow-lg bg-navyBlue/60;
 }
 .card h2 {

@@ -1,6 +1,7 @@
 import { PrepositionCard } from "@/app/components/PrepositionCard";
 import { prepositions } from "@/data/preposition";
 import React from "react";
+import { PrepositionDetailCard } from "../components/PrepositionDetailCard";
 export default function Page({ params }: { params: { id: string } }) {
   const id = params?.id;
   let idDecoded = decodeURIComponent(id);
@@ -15,14 +16,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   return (
     <main className="p-5">
-      <div
-        className="max-w-md m-auto"
-        style={{
-          viewTransitionName: `preposition__${word}`,
-        }}
-      >
-        <PrepositionCard phonetic={phonetic} spanish={spanish} word={word} />
-      </div>
+      <PrepositionDetailCard {...{ phonetic, spanish, word }} />
     </main>
   );
 }
